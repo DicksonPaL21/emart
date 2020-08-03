@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#36393E" />
+
+  <meta name="description" content="EMART, Energy Meter Analysis and Reporting Technology">
+  <meta name="author" content="Dickson H. Palomeras">
+  <link rel="icon" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="row animate-bottom-zoom">
+      <div class="col-12" style="margin-top: 100px">
+        <div class="pl-3 pr-3">
+          <form id="login" class="form-login" action="javascript:void(0)" method="POST">
+            <img id="emart" class="mb-5" alt="EMART">
+            <input type="text" id="username" class="alpha-numeric-only mb-1 f-1" placeholder="Username" autocomplete="off" required autofocus>
+            <input type="password" id="password" class="alpha-numeric-only mb-2 f-1" placeholder="Password" required>
+            <button type="submit" class="w-100 f-2">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--div class="wrapper">
+      <div class="row animate-bottom-zoom">
+        <div class="col-12">
+          <img id="emart" alt="EMART">
+        </div>
+        <div class="col-12">
+          <form id="login" class="form-login" action="login" method="POST">
+            <input type="text" name="username" placeholder="Username" required autofocus><br />
+            <input type="password" name="password" placeholder="Password" required><br />
+            <button type="submit">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div-->
+
+  <div class="notification-field"></div>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer">
+      <ul>
+        <li class="f-2"><b>EMART</b> &copy; 2018</li>
+        <li class="f-2"><a href="about">About Us</a></li>
+      </ul>
+    </div>
+    <p class="sub-section-attribution f-3">All Rights Reserved. Energy Meter Analysis and Reporting Technology</p>
+  </footer>
+
+  <style>
+    img#emart {
+      height: 64px;
+    }
+  </style>
+
+  <script src="js/login.js"></script>
+
+  <script>
+    var filter = document.querySelectorAll('input[type="text"]')
+    for (var x = 0; x < filter.length; x++)
+      filter[x].acceptAlphaNumericKey()
+  </script>
+</body>
+
+</html>
