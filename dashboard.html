@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#36393E" />
+
+  <meta name="description" content="EMART, Energy Meter Analysis and Reporting Technology">
+  <meta name="author" content="Dickson H. Palomeras">
+  <link rel="icon" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <nav></nav>
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="header title"></h1>
+      </div>
+    </div>
+    <script src="js/navigator.js"></script>
+
+    <div class="row reverse">
+      <div class="col-12 col-md-4 col-lg-3" id="options">
+        <!-- Trigger/Open the Modal -->
+        <button id="calculator-btn" class="f-2">CALCULATOR</button>
+
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="float-left ml-2 f-3" style="color: #BFBFBF">Energy Consumption</h6>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">Today</h4>
+                <h4 id="today-energy" class="text-right float-right green f-1">0.0000 kW</h4>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-2">Yesterday</h5>
+                <h5 id="yesterday-energy" class="text-right float-right orange f-2">0.0000 kW</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="float-left ml-2 f-3" style="color: #BFBFBF">Electricity Cost</h6>
+                <span id="edit-this-month-electricity-cost-btn" class="float-right b-3 mr-2" title="Edit Electricity Cost"></span>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">This Month</h4>
+                <h4 id="this-month-electricity-cost" class="text-right float-right green f-1">&#8369; 0.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="float-left ml-2 f-3" style="color: #BFBFBF">Estimation</h6>
+                <span id="edit-estimate-btn" class="float-right b-3 mr-2" title="Edit Estimation"></span>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">Estimated</h4>
+                <h4 id="estimated-cost" class="text-right float-right blue f-1">&#8369; 0.00</h4>
+              </div>
+              <div class="col-12">
+                <div class="progress">
+                  <div class="progress-bar striped">
+                    <span class="align-middle f-3"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="float-left ml-2 f-3" style="color: #BFBFBF">Control Panel</h6>
+                <span id="edit-switch-name-btn" class="float-right b-3 mr-2" title="Edit Switch Name"></span>
+              </div>
+
+              <div class="col-12 toggle-group f-1">
+                <div class="float-left">
+                  <label class="align-middle white">Switch 1</label>
+                </div>
+                <div class="float-right">
+                  <input id="toggle-1" type="checkbox" />
+                  <label id="label-1" for="toggle-1" class="align-middle">
+                    <div id="switch-1"></div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 toggle-group f-1">
+                <div class="float-left">
+                  <label class="align-middle white">Switch 2</label>
+                </div>
+                <div class="float-right">
+                  <input id="toggle-2" type="checkbox" />
+                  <label id="label-2" for="toggle-2" class="align-middle">
+                    <div id="switch-2"></div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 toggle-group f-1">
+                <div class="float-left">
+                  <label class="align-middle white">Switch 3</label>
+                </div>
+                <div class="float-right">
+                  <input id="toggle-3" type="checkbox" />
+                  <label id="label-3" for="toggle-3" class="align-middle">
+                    <div id="switch-3"></div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 toggle-group f-1">
+                <div class="float-left">
+                  <label class="align-middle white">Switch 4</label>
+                </div>
+                <div class="float-right">
+                  <input id="toggle-4" type="checkbox" />
+                  <label id="label-4" for="toggle-4" class="align-middle">
+                    <div id="switch-4"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 col-lg-9">
+        <div class="container">
+          <div id="gauge-load-bar">
+            <div id="fountainG">
+              <div id="fountainG_1" class="fountainG"></div>
+              <div id="fountainG_2" class="fountainG"></div>
+              <div id="fountainG_3" class="fountainG"></div>
+              <div id="fountainG_4" class="fountainG"></div>
+              <div id="fountainG_5" class="fountainG"></div>
+              <div id="fountainG_6" class="fountainG"></div>
+              <div id="fountainG_7" class="fountainG"></div>
+              <div id="fountainG_8" class="fountainG"></div>
+            </div>
+          </div>
+          <div class="hide">
+            <div style="display: inline-block; width: 100%">
+              <div class="col-6 col-md-6 col-md-6 col-lg-3">
+
+                <div class="GaugeMeter">
+                  <figure id="voltage"></figure>
+                  <label class="f-1">VOLTAGE</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-md-6 col-lg-3">
+                <div class="GaugeMeter">
+                  <figure id="current"></figure>
+                  <label class="f-1">CURRENT</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-md-6 col-lg-3">
+                <div class="GaugeMeter">
+                  <figure id="power"></figure>
+                  <label class="f-1">POWER</label>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 col-md-6 col-lg-3">
+                <div class="GaugeMeter">
+                  <figure id="energy"></figure>
+                  <label class="f-1">ENERGY</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="clearfix p-1">
+            <div class="btn-group float-right">
+              <select class="f-1">
+                <option id="op1">Voltage</option>
+                <option id="op2">Current</option>
+                <option id="op3">Power</option>
+              </select>
+            </div>
+          </div>
+          <div class="loader-wrapper">
+            <span class="loader large"></span>
+          </div>
+          <div class="chart">
+            <div id="interactive" class="hide fade-in"></div>
+            <div id="interactive-label" class="knob knob-label f-1">INTERACTIVE CHART</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <form class="modal-dialog modal-animate-top m-auto col-12 col-md-10 col-lg-6" action="javascript:void(0)" method="POST">
+        <div class="modal-header">
+          <span class="modal-btn">&times;</span>
+          <label id="modal-title" class="f-1">Energy Consumption Calculator</label>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-5">
+                  <h4 class="labelFix text-left f-1">Voltage</h4>
+                </div>
+                <div class="col-7 input_field">
+                  <input type="text" class="f-1" style="width: 100%" placeholder="V" required autofocus />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-5">
+                  <select class="float-left f-1" style="width: 100%">
+                    <option>Amps</option>
+                    <option>Watts</option>
+                  </select>
+                </div>
+                <div class="col-7 input_field">
+                  <input type="text" class="f-1" style="width: 100%" placeholder="A" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-5">
+                  <h4 class="labelFix text-left f-1">Hours / Day</h4>
+                </div>
+                <div class="col-7 input_field">
+                  <input type="number" class="f-1" style="width: 100%" placeholder="Hour" min="1" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-5">
+                  <h4 class="labelFix text-left f-1">Energy Cost</h4>
+                </div>
+                <div class="col-7 input_field">
+                  <input type="text" class="f-1" style="width: 100%" placeholder="&#8369;" min="1" required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <table class="th-center" style="margin-bottom: 3%">
+              <thead class="f-2">
+                <tr>
+                  <th>Duration</th>
+                  <th>Energy</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody class="f-1">
+                <tr>
+                  <th>Hour</th>
+                  <th>0.0000 kWh</th>
+                  <th>&#8369; 0.0000</th>
+                </tr>
+                <tr>
+                  <th>Day</th>
+                  <th>0.0000 kWh</th>
+                  <th>&#8369; 0.0000</th>
+                </tr>
+                <tr>
+                  <th>Week</th>
+                  <th>0.0000 kWh</th>
+                  <th>&#8369; 0.0000</th>
+                </tr>
+                <tr>
+                  <th>Month</th>
+                  <th>0.0000 kWh</th>
+                  <th>&#8369; 0.0000</th>
+                </tr>
+                <tr>
+                  <th>Year</th>
+                  <th>0.0000 kWh</th>
+                  <th>&#8369; 0.0000</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="id01-close-btn" class="btn-default f-2">Close</button>
+          <button type="submit" id="calculate-btn" class="btn-primary f-2">Calculate</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="id02" class="modal">
+      <form class="modal-dialog modal-animate-top m-auto" action="javascript:void(0)" method="POST">
+        <div class="modal-header">
+          <span class="modal-btn">&times;</span>
+          <label id="modal-title" class="f-1"></label>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-3">
+              <h4 class="labelFix f-1"></h4>
+            </div>
+            <div class="col-9 input_field f-1"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="id02-close-btn" class="btn-default f-2">Close</button>
+          <button type="submit" id="id02-save-btn" class="btn-primary f-2">Save changes</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="id03" class="modal">
+      <form class="modal-dialog modal-animate-top m-auto" action="javascript:void(0)" method="POST">
+        <div class="modal-header">
+          <span class="modal-btn">&times;</span>
+          <label id="modal-title" class="f-1">Switch Name</label>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-4">
+              <h4 class="labelFix f-1">Switch 1 <strong class="red">*</strong></h4>
+            </div>
+            <div class="col-8 input_field">
+              <input type="text" class="f-1" placeholder="Name" maxlength="9" required autofocus />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <h4 class="labelFix f-1">Switch 2 <strong class="red">*</strong></h4>
+            </div>
+            <div class="col-8 input_field">
+              <input type="text" class="f-1" placeholder="Name" maxlength="9" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <h4 class="labelFix f-1">Switch 3 <strong class="red">*</strong></h4>
+            </div>
+            <div class="col-8 input_field">
+              <input type="text" class="f-1" placeholder="Name" maxlength="9" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <h4 class="labelFix f-1">Switch 4 <strong class="red">*</strong></h4>
+            </div>
+            <div class="col-8 input_field">
+              <input type="text" class="f-1" placeholder="Name" maxlength="9" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <h4 class="labelFix f-1">Enable Cut-Off Load</h4>
+            </div>
+            <div class="col-5">
+              <label class="checkbox-container labelFix f-1">
+                <input type="checkbox" id="ssidHidden" />
+                <label class="checkbox" for="ssidHidden"></label>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="id03-close-btn" class="btn-default f-2">Close</button>
+          <button type="submit" id="id03-save-btn" class="btn-primary f-2">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="notification-field"></div>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer">
+      <ul>
+        <li class="f-2"><b>EMART</b> &copy; 2018</li>
+        <li class="f-2"><a href="about">About Us</a></li>
+      </ul>
+    </div>
+    <p class="sub-section-attribution f-3">All Rights Reserved. Energy Meter Analysis and Reporting Technology</p>
+  </footer>
+
+  <style>
+    .th-center th:nth-child(1) {
+      width: 20%;
+      padding-left: 5%;
+    }
+
+    .th-center th:nth-child(2),
+    .th-center th:nth-child(3) {
+      width: 40%;
+      text-align: center;
+    }
+  </style>
+
+  <!-- jQuery 3 -->
+  <script src="bower_components/js/jquery.min.js"></script>
+  <!-- Dashboard -->
+  <script src="js/dashboard.js"></script>
+  <!-- FLOT CHARTS -->
+  <script src="bower_components/js/jquery.flot.js"></script>
+  <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+  <script src="bower_components/js/jquery.flot.resize.js"></script>
+
+  <script>
+    var filter = document.querySelectorAll('input[type="text"]')
+    for (var x = 0; x < filter.length; x++)
+      filter[x].acceptAlphaNumericKey()
+  </script>
+</body>
+
+</html>

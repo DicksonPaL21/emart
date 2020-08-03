@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#36393E" />
+
+  <meta name="description" content="EMART, Energy Meter Analysis and Reporting Technology">
+  <meta name="author" content="Dickson H. Palomeras">
+  <link rel="icon" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <nav></nav>
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="header title"></h1>
+      </div>
+    </div>
+    <script src="js/navigator.js"></script>
+
+    <div class="row">
+      <div id="line" class="col-12 col-sm-3">
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="text-left ml-2 f-3" style="color: #BFBFBF">Electricity Cost</h6>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">This Month</h4>
+                <h4 id="this-month-electricity-cost" class="text-right float-right green f-1">&#8369; 0.00</h4>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-2">Last Month</h5>
+                <h5 id="last-month-electricity-cost" class="text-right float-right orange f-2">&#8369; 0.00</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="text-left ml-2 f-3" style="color: #BFBFBF">Energy Cost</h6>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">Yesterday</h4>
+                <h4 id="yesterday-energy-cost" class="text-right float-right green f-1">&#8369; 0.00</h4>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-2">This Month</h5>
+                <h5 id="this-month-energy-cost" class="text-right float-right orange f-2">&#8369; 0.00</h5>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-3">Last Month</h5>
+                <h5 id="last-month-energy-cost" class="text-right float-right red f-3">&#8369; 0.00</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="text-left ml-2 f-3" style="color: #BFBFBF">Energy Consumption</h6>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">Yesterday</h4>
+                <h4 id="yesterday-energy" class="text-right float-right green f-1">0.0000 kW</h4>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-2">This Month</h5>
+                <h5 id="this-month-energy" class="text-right float-right orange f-2">0.0000 kW</h5>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-3">Last Month</h5>
+                <h5 id="last-month-energy" class="text-right float-right red f-3">0.0000 kW</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader small"></span>
+          </div>
+          <div class="hide">
+            <div style="width: 100%; display: inline-block">
+              <div class="col-12">
+                <h6 class="text-left ml-2 f-3" style="color: #BFBFBF">Total Consumed</h6>
+              </div>
+              <div class="col-12">
+                <h4 class="text-left float-left white f-1">Cost</h4>
+                <h4 id="total-cost" class="text-right float-right green f-1">&#8369; 0.00</h4>
+              </div>
+              <div class="col-12">
+                <h5 class="text-left float-left white f-2">Energy</h5>
+                <h5 id="total-energy" class="text-right float-right orange f-2">0.00 kW</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-9">
+        <div class="container">
+          <div class="loader-wrapper">
+            <span class="loader large"></span>
+          </div>
+          <div id="table">
+            <table class="th-center">
+              <thead class="f-2">
+                <tr>
+                  <th>Date</th>
+                  <th>Energy</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody class="f-1"></tbody>
+            </table>
+            <div class="pagination dark f-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification-field"></div>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer">
+      <ul>
+        <li class="f-2"><b>EMART</b> &copy; 2018</li>
+        <li class="f-2"><a href="about">About Us</a></li>
+      </ul>
+    </div>
+    <p class="sub-section-attribution f-3">All Rights Reserved. Energy Meter Analysis and Reporting Technology</p>
+  </footer>
+
+  <style>
+    #chart,
+    #table {
+      display: none;
+    }
+
+    .th-center th {
+      text-align: center;
+    }
+
+    .th-center th {
+      width: 33.333333%;
+    }
+  </style>
+
+  <!-- jQuery 3 | History -->
+  <script src="bower_components/js/jquery.min.js"></script>
+  <script src="js/history.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+:root {
+  /*=> screen-size > 426px <=*/
+  --lg-fs-1: 10.5pt;
+  --lg-fs-2: 9.5pt;
+  --lg-fs-3: 8.5pt;
+  --lg-fs-4: 7.5pt;
+  --lg-fs-5: 6.5pt;
+
+  /*=> screen-size < 425px <=*/
+  --md-fs-1: 10pt;
+  --md-fs-2: 9pt;
+  --md-fs-3: 8pt;
+  --md-fs-4: 7pt;
+  --md-fs-5: 6pt;
+
+  /*=> screen-size < 375px <=*/
+  --sm-fs-1: 9.5pt;
+  --sm-fs-2: 8.5pt;
+  --sm-fs-3: 7.5pt;
+  --sm-fs-4: 6.5pt;
+  --sm-fs-5: 5.5pt;
+
+  /*=> screen-size < 320px <=*/
+  --xs-fs-1: 9pt;
+  --xs-fs-2: 8pt;
+  --xs-fs-3: 7pt;
+  --xs-fs-4: 6pt;
+  --xs-fs-5: 5pt;
+}
+
+/****** MEDIA QUERY ******/
+@media screen and (min-width: 426px) {
+  .f-1 {
+    font-size: var(--lg-fs-1) !important;
+  }
+
+  .f-2 {
+    font-size: var(--lg-fs-2) !important;
+  }
+
+  .f-3 {
+    font-size: var(--lg-fs-3) !important;
+  }
+
+  .f-4 {
+    font-size: var(--lg-fs-4) !important;
+  }
+
+  .f-5 {
+    font-size: var(--lg-fs-5) !important;
+  }
+
+  .title {
+    font-size: calc(var(--lg-fs-2) + var(--lg-fs-4)) !important;
+  }
+
+  .sub-title {
+    font-size: calc(var(--lg-fs-4) + var(--lg-fs-5)) !important;
+  }
+
+  .b-1 {
+    width: var(--lg-fs-1) !important;
+    height: var(--lg-fs-1) !important;
+  }
+
+  .b-2 {
+    width: var(--lg-fs-2) !important;
+    height: var(--lg-fs-2) !important;
+  }
+
+  .b-3 {
+    width: var(--lg-fs-3) !important;
+    height: var(--lg-fs-3) !important;
+  }
+
+  .b-4 {
+    width: var(--lg-fs-4) !important;
+    height: var(--lg-fs-4) !important;
+  }
+
+  .b-5 {
+    width: var(--lg-fs-5) !important;
+    height: var(--lg-fs-5) !important;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+  .f-1 {
+    font-size: var(--md-fs-1) !important;
+  }
+
+  .f-2 {
+    font-size: var(--md-fs-2) !important;
+  }
+
+  .f-3 {
+    font-size: var(--md-fs-3) !important;
+  }
+
+  .f-4 {
+    font-size: var(--md-fs-4) !important;
+  }
+
+  .f-5 {
+    font-size: var(--md-fs-5) !important;
+  }
+
+  .title {
+    font-size: calc(var(--md-fs-2) + var(--md-fs-4)) !important;
+  }
+
+  .sub-title {
+    font-size: calc(var(--md-fs-4) + var(--md-fs-5)) !important;
+  }
+
+  .b-1 {
+    width: var(--md-fs-1) !important;
+    height: var(--md-fs-1) !important;
+  }
+
+  .b-2 {
+    width: var(--md-fs-2) !important;
+    height: var(--md-fs-2) !important;
+  }
+
+  .b-3 {
+    width: var(--md-fs-3) !important;
+    height: var(--md-fs-3) !important;
+  }
+
+  .b-4 {
+    width: var(--md-fs-4) !important;
+    height: var(--md-fs-4) !important;
+  }
+
+  .b-5 {
+    width: var(--md-fs-5) !important;
+    height: var(--md-fs-5) !important;
+  }
+}
+
+@media screen and (min-width: 326px) and (max-width: 375px) {
+  .f-1 {
+    font-size: var(--sm-fs-1) !important;
+  }
+
+  .f-2 {
+    font-size: var(--sm-fs-2) !important;
+  }
+
+  .f-3 {
+    font-size: var(--sm-fs-3) !important;
+  }
+
+  .f-4 {
+    font-size: var(--sm-fs-4) !important;
+  }
+
+  .f-5 {
+    font-size: var(--sm-fs-5) !important;
+  }
+
+  .title {
+    font-size: calc(var(--sm-fs-2) + var(--sm-fs-4)) !important;
+  }
+
+  .sub-title {
+    font-size: calc(var(--sm-fs-4) + var(--sm-fs-5)) !important;
+  }
+
+  .b-1 {
+    width: var(--sm-fs-1) !important;
+    height: var(--sm-fs-1) !important;
+  }
+
+  .b-2 {
+    width: var(--sm-fs-2) !important;
+    height: var(--sm-fs-2) !important;
+  }
+
+  .b-3 {
+    width: var(--sm-fs-3) !important;
+    height: var(--sm-fs-3) !important;
+  }
+
+  .b-4 {
+    width: var(--sm-fs-4) !important;
+    height: var(--sm-fs-4) !important;
+  }
+
+  .b-5 {
+    width: var(--sm-fs-5) !important;
+    height: var(--sm-fs-5) !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .f-1 {
+    font-size: var(--xs-fs-1) !important;
+  }
+
+  .f-2 {
+    font-size: var(--xs-fs-2) !important;
+  }
+
+  .f-3 {
+    font-size: var(--xs-fs-3) !important;
+  }
+
+  .f-4 {
+    font-size: var(--xs-fs-4) !important;
+  }
+
+  .f-5 {
+    font-size: var(--xs-fs-5) !important;
+  }
+
+  .title {
+    font-size: calc(var(--xs-fs-2) + var(--xs-fs-4)) !important;
+  }
+
+  .sub-title {
+    font-size: calc(var(--xs-fs-4) + var(--xs-fs-5)) !important;
+  }
+
+  .b-1 {
+    width: var(--xs-fs-1) !important;
+    height: var(--xs-fs-1) !important;
+  }
+
+  .b-2 {
+    width: var(--xs-fs-2) !important;
+    height: var(--xs-fs-2) !important;
+  }
+
+  .b-3 {
+    width: var(--xs-fs-3) !important;
+    height: var(--xs-fs-3) !important;
+  }
+
+  .b-4 {
+    width: var(--xs-fs-4) !important;
+    height: var(--xs-fs-4) !important;
+  }
+
+  .b-5 {
+    width: var(--xs-fs-5) !important;
+    height: var(--xs-fs-5) !important;
+  }
+}

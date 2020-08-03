@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#36393E" />
+
+  <meta name="description" content="EMART, Energy Meter Analysis and Reporting Technology">
+  <meta name="author" content="Dickson H. Palomeras">
+  <link rel="icon" type="image/x-icon">
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <nav></nav>
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="header title"></h1>
+      </div>
+    </div>
+    <script src="js/navigator.js"></script>
+
+    <form action="javascript:void(0)" method="POST">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="label-container f-1">WiFi Server</div>
+          <div class="container" style="text-align: left">
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">SSID</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="ssidName" minlength="5" maxlength="32" required autofocus />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">Password (<span class="red">min.8 chars</span>)</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="ssidPassword" minlength="8" maxlength="32" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="checkbox-group labelFix">
+                  <label class="f-1">Hide SSID (<span class="red">be careful with this setting!</span>)</label>
+                  <span class="checkbox-mask ml-3">
+                    <input type="checkbox" id="ssidHidden" />
+                    <label class="checkbox" for="ssidHidden"></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">Channel</label>
+              </div>
+              <div class="col-6">
+                <input type="number" class="f-1" id="channel" min="1" max="14" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">MAC</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="upperCase f-1" id="macAp" minlength="17" maxlength="17" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="checkbox-group labelFix">
+                  <label class="f-1">Random MAC</label>
+                  <span class="checkbox-mask ml-3">
+                    <input type="checkbox" id="randMacAp" />
+                    <label class="checkbox" for="randMacAp"></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="float-left">
+                  <label class="labelFix f-1">MAC Change Interval</label>
+                </div>
+                <div class="float-right">
+                  <div class="float-left">
+                    <input type="number" class="text-center f-1" style="width: 75px" id="macInterval" min="30" max="86400" required disabled />
+                  </div>
+                  <div class="float-right">
+                    <label class="labelFix ml-2 f-1">min</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="label-container f-1">WiFi Client</div>
+          <div class="container" style="text-align: left">
+            <div class="row">
+              <div class="col-12">
+                <div class="checkbox-group labelFix">
+                  <label class="f-1">Enable WiFi Client</label>
+                  <span class="checkbox-mask ml-3">
+                    <input type="checkbox" id="wifiStatus" />
+                    <label class="checkbox" for="wifiStatus"></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">SSID</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="wifiName" minlength="5" maxlength="32" required disabled />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">Password</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="wifiPassword" minlength="8" maxlength="32" required disabled />
+              </div>
+            </div>
+          </div>
+
+          <div class="label-container f-1">Web Server</div>
+          <div class="container" style="text-align: left">
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">Username</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="serverUsername" minlength="5" maxlength="16" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label class="labelFix f-1">Password (<span class="red">min.5 chars</span>)</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="f-1" id="serverPassword" minlength="5" maxlength="32" required />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+          <button type="button" class="red f-2" id="reset-btn">reset</button>
+          <button type="button" class="red f-2" id="restart-btn">restart</button>
+          <button type="submit" class="button-primary float-right f-2" id="save-btn">save</button>
+          <div class="float-right" id="indicator"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="notification-field"></div>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer">
+      <ul>
+        <li class="f-2"><b>EMART</b> &copy; 2018</li>
+        <li class="f-2"><a href="about">About Us</a></li>
+      </ul>
+    </div>
+    <p class="sub-section-attribution f-3">All Rights Reserved. Energy Meter Analysis and Reporting Technology</p>
+  </footer>
+
+  <style>
+    input:focus {
+      outline: none;
+      border-bottom-color: rebeccapurple !important;
+    }
+
+    #indicator {
+      width: 86px;
+      font-size: 11pt;
+      line-height: 38px;
+    }
+
+    .label-container {
+      margin: 3% 0 2% 0;
+    }
+  </style>
+  <!-- jQuery 3 -->
+  <script src="bower_components/js/jquery.min.js"></script>
+  <!-- Setting -->
+  <script src="js/setting.js"></script>
+
+  <script>
+    var filter = document.querySelectorAll('input[type="text"]')
+    for (var x = 0; x < filter.length; x++)
+      filter[x].acceptAlphaNumericKey()
+  </script>
+</body>
+
+</html>
