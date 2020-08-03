@@ -146,7 +146,7 @@ function getData() {
     setTimeout( getData, updateInterval )
     vibrate()
   }, updateInterval )
-} //if ( !isDebugingModeEnabled ) getData()
+} if ( !isDebugingModeEnabled ) getData()
 
 $( '#gauge-load-bar, .loader-wrapper' ).hide()
 $( '.hide' ).removeClass( 'hide' )
