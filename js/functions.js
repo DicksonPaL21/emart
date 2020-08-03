@@ -1,4 +1,4 @@
-var isDebugingModeEnabled = false
+var isDebugingModeEnabled = true
 
 window.onload = function () {
   if ( isDebugingModeEnabled ) {
