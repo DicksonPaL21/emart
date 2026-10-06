@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "../css/style.css";
+
+#app {
+  min-height: 100vh;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+.label-container {
+  margin: 3% 0 2%;
+}
+
+#indicator {
+  width: 86px;
+  font-size: 11pt;
+  line-height: 38px;
+}
+
+.th-center th {
+  text-align: center;
+}

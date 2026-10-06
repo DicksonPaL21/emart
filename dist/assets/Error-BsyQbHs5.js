@@ -1,0 +1,1 @@
+import{u as r}from"./vendor-yPQ2ic8W.js";function o(){return r("div",{class:"row",children:r("div",{class:"col-12",children:[r("br",{}),r("p",{class:"text-center bold f-1",children:"Page not found"})]})})}export{o as default};

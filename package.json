@@ -1,0 +1,19 @@
+{
+  "name": "emart-web",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "preact": "^10.26.9",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {}
+}
