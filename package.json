@@ -1,0 +1,8 @@
+{
+  "name": "emart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DicksonPaL21/emart.git",
+  "author": "Dickson Palomeras <dicksonpal_021@yahoo.com.ph>",
+  "license": "MIT"
+}
