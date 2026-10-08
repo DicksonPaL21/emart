@@ -1,4 +1,4 @@
-export const isDebug = import.meta.env.DEV
+export const isDebug = process.env.NODE_ENV === "development"
 
 export function getCookieSession() {
   return document.cookie.includes("EMARTSESSIONID=")

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../css/style.css";
+
+:root {
+  --background: #27272b;
+  --foreground: #f7f7f7;
+  --card: #303035;
+  --card-foreground: #f7f7f7;
+  --popover: #303035;
+  --popover-foreground: #f7f7f7;
+  --primary: #00a65a;
+  --primary-foreground: #ffffff;
+  --secondary: #3c3f41;
+  --secondary-foreground: #f7f7f7;
+  --muted: #37373d;
+  --muted-foreground: #bfbfbf;
+  --accent: #337ab7;
+  --accent-foreground: #ffffff;
+  --destructive: #d9534f;
+  --border: #505056;
+  --input: #505056;
+  --ring: #00c0ef;
+}
+
+html { scroll-padding-top: 3rem; }
+body { background: var(--background); color: var(--foreground); }
+html { color-scheme: dark; }
+button, a, input, select, textarea { touch-action: manipulation; }
+.modal { overscroll-behavior: contain; }
+button, a, input, select, textarea { outline-offset: 3px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ring);
+}
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 10000; background: var(--card); color: var(--foreground); padding: .75rem 1rem; }
+.skip-link:focus { top: 1rem; }
+.notification-field { pointer-events: none; }
+.notification-field .msg { pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+
+
+

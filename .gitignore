@@ -1,4 +1,8 @@
 node_modules/
+.next/
+.next-build/
+.npm-cache/
+*.tsbuildinfo
 .pnpm-store/
 .yarn/
 !.yarn/releases/

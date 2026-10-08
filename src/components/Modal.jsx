@@ -1,19 +1,22 @@
+import { useId } from "react"
+
 export default function Modal({ open, title, children, onClose, footer }) {
+  const titleId = useId()
   if (!open) return null
   return (
-    <div class='modal' style='display:block'>
+    <div className='modal' role='dialog' aria-modal='true' aria-labelledby={titleId} style={{ display: "block" }}>
       <form
-        class='modal-dialog modal-animate-top m-auto col-12 col-md-10 col-lg-6'
+        className='modal-dialog modal-animate-top m-auto col-12 col-md-10 col-lg-6'
         onSubmit={(event) => event.preventDefault()}
       >
-        <div class='modal-header'>
-          <span class='modal-btn' onClick={onClose}>
+        <div className='modal-header'>
+          <button type='button' className='modal-btn' aria-label={`Close ${title}`} onClick={onClose}>
             &times;
-          </span>
-          <label class='f-1'>{title}</label>
+          </button>
+          <span id={titleId} className='f-1'>{title}</span>
         </div>
-        <div class='modal-body'>{children}</div>
-        <div class='modal-footer'>{footer}</div>
+        <div className='modal-body'>{children}</div>
+        <div className='modal-footer'>{footer}</div>
       </form>
     </div>
   )

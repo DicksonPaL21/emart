@@ -1,4 +1,4 @@
-@import "media.css";
+@import "./media.css";
 
 /* Global */
 * {
@@ -848,8 +848,8 @@ figcaption {
 }
 
 .modal-btn {
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
 }
 
 .modal-animate-top {
