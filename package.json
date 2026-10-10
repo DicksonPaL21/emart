@@ -1,8 +1,43 @@
 {
   "name": "emart",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/DicksonPaL21/emart.git",
   "author": "Dickson Palomeras <dicksonpal_021@yahoo.com.ph>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.2.0",
+    "@radix-ui/react-slot": "1.4.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.53.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "3.7.0",
+    "tailwindcss": "4.3.3"
+  },
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.17.1",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app components lib tests scripts next.config.ts playwright.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.0",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "^9.7.0",
+    "eslint-config-next": "16.4.0",
+    "playwright-core": "1.64.0",
+    "typescript": "~6.0.0"
+  }
 }

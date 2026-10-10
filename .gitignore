@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.yarn/
+.pnp.*
+.env*
+!.env.example
+*.tsbuildinfo
+test-results/
+playwright-report/
+.verification/

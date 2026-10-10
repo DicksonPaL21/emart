@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #36393e;
+  --foreground: #a0a2a5;
+  --card: #2f3136;
+  --card-foreground: #bfbfbb;
+  --popover: #36393e;
+  --popover-foreground: #bfbfbb;
+  --primary: #4974a9;
+  --primary-foreground: #ffffff;
+  --secondary: #42444a;
+  --secondary-foreground: #ffffff;
+  --muted: #2b2b31;
+  --muted-foreground: #9e9e9e;
+  --accent: #42464d;
+  --accent-foreground: #cecece;
+  --destructive: #e99d9a;
+  --border: #37373d;
+  --input: #828282;
+  --ring: #95b8e4;
+  --link: #83a4ce;
+  --success: #5cb85c;
+  --warning: #f0ad4e;
+  --info: #609ed3;
+  --chart-voltage: #f56954;
+  --chart-current: #00c0ef;
+  --chart-power: #00a65a;
+  --gauge-voltage: #d9534f;
+  --gauge-current: #357ebd;
+  --gauge-power: #5cb85c;
+  --gauge-energy: #f0ad4e;
+  --gauge-track: #2a2c31;
+  --switch-track: #2c3e50;
+  --switch-off: #e7776b;
+  --switch-on: #2ecc71;
+  --radius: 0.25rem;
+}
+
+/* Keep keyboard indicators visible above component utility layers. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+[data-slot="dialog-content"] {
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.device-toggle {
+  appearance: none;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid var(--input);
+  border-radius: 24px;
+  background: var(--switch-track);
+}
+.device-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 3px auto auto 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--switch-off);
+}
+.device-toggle:checked::after {
+  transform: translateX(20px);
+  background: var(--switch-on);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .device-toggle::after {
+    transition:
+      transform 150ms ease-out,
+      background-color 150ms ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+  .device-toggle {
+    appearance: auto;
+  }
+  .device-toggle::after {
+    display: none;
+  }
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-link: var(--link);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --font-sans: "Roboto", "RobotoDraft", Helvetica, Arial, sans-serif;
+  --breakpoint-xs: 428px;
+  --breakpoint-sm: 601px;
+  --breakpoint-md: 678px;
+  --breakpoint-lg: 916px;
+}
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans text-sm;
+  }
+  button,
+  a,
+  select,
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  th,
+  td {
+    @apply px-2 py-2.5 text-center;
+  }
+  th {
+    @apply font-normal;
+  }
+  thead {
+    border-bottom: 1px solid var(--input);
+  }
+}
